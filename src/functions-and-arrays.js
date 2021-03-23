@@ -47,6 +47,8 @@ function sumNumbers(numbers){
 
 
 
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
@@ -99,8 +101,56 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray (wordsUnique){
+
+  if(wordsUnique.length == 0){
+    return null;
+  }
+  let newUnique =[];
+  for(i=0; i<wordsUnique.length; i++){
+    newUnique = wordsUnique;
+    if(newUnique.indexOf(i)==wordsUnique.indexOf(i)){
+      newUnique.splice(i);
+      
+    }
+    
+    }
+  
+  
+  return newUnique
+}
+
+
+
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function doesWordExist(wordsFind, str){
+  if(wordsFind.length == 0){
+    return null;
+  }
+
+  newArr = wordsFind;
+  for(i=0; i<wordsFind.length; i++){
+  switch(str){
+    case wordsFind[i]:
+      return true;
+    break;
+    case newArr:
+      return true;
+      break;
+  }
+
+  return false;
+  
+  }
+    
+}
+
+
+
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -116,6 +166,21 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(wordsCount, search){
+  if(wordsCount.length == ''){
+    return 0;
+  }
+  let counter= 0;
+  
+  for (i=0 ; i<wordsCount.length; i++){
+    if(search == wordsCount[i]){
+      counter++;
+    } 
+  }
+  return counter;
+  
+}
 
 // Iteration #8: Bonus
 
@@ -141,3 +206,8 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+function greatestProduct(){
+
+
+}
