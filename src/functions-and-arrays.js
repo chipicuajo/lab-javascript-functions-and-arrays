@@ -42,6 +42,31 @@ function sumNumbers(numbers){
   
   return result;
 }
+//  ----3.1 Bonus --- //
+
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+function sum(mixedArr) {
+  let addin = 0;
+  for (i = 0; i < mixedArr.length; i++) {
+
+    if (typeof mixedArr[i] !== typeof 0 && typeof mixedArr[i] !==  typeof "") {
+      if (mixedArr[i] === true) {
+        mixedArr[i] = 1;
+        addin += mixedArr[i];
+      } else {
+        addin += 0;
+      }
+    }else if(typeof mixedArr[i] ==  typeof ""){
+      addin += mixedArr[i].length;
+    }else{
+      addin += mixedArr[i];
+    }
+  }
+  return addin;
+}
+// should return: 57
+
 
 
 
