@@ -49,17 +49,26 @@ const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 function sum(mixedArr) {
   let addin = 0;
   for (i = 0; i < mixedArr.length; i++) {
-
-    if (typeof mixedArr[i] !== typeof 0 && typeof mixedArr[i] !==  typeof "") {
+    if (
+      typeof mixedArr[i] !== typeof 0 &&
+      typeof mixedArr[i] !== typeof "" &&
+      typeof mixedArr[i] !== typeof true
+    ) {
+      throw "Unsupported data type sir or ma'am";
+     
+    } else if (
+      typeof mixedArr[i] !== typeof 0 &&
+      typeof mixedArr[i] !== typeof ""
+    ) {
       if (mixedArr[i] === true) {
         mixedArr[i] = 1;
         addin += mixedArr[i];
       } else {
         addin += 0;
       }
-    }else if(typeof mixedArr[i] ==  typeof ""){
+    } else if (typeof mixedArr[i] == typeof "") {
       addin += mixedArr[i].length;
-    }else{
+    } else {
       addin += mixedArr[i];
     }
   }
