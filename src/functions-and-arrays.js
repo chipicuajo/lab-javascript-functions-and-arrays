@@ -138,23 +138,22 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray (wordsUnique){
+function uniquifyArray (words){
 
-  if(wordsUnique.length == 0){
+  if(words.length == 0){
     return null;
   }
 
 
   let newUnique =[];
-  for(i=0; i<wordsUnique.length; i++){
-    if(newUnique[i].indexOf(wordsUnique[i]) == -1){
-      uniqueWords.push(wordsUnique[i]);
+  for(let i=0; i<words.length; i++){
+    if(newUnique.indexOf(words[i]) == -1){
+      newUnique.push(words[i]);
     }
   }
     
   return newUnique
 }
-
 
 
 
@@ -166,20 +165,9 @@ function doesWordExist(wordsFind, str){
     return null;
   }
 
-  newArr = wordsFind;
-  for(i=0; i<wordsFind.length; i++){
-  switch(str){
-    case wordsFind[i]:
-      return true;
-    break;
-    case newArr:
-      return true;
-      break;
-  }
-
-  return false;
+  return wordsFind.includes(str);
   
-  }
+
     
 }
 
