@@ -110,11 +110,14 @@ function averageWordLength(wordsArr){
     return null;
   }
   
-  let avgLength = '';
-    for(i=0; i<wordsArr.length; i++){
-      avgLength = wordsArr.join('').length/wordsArr.length;
+  let avgLength = 0;;
+    
+  for(i=0; i<wordsArr.length; i++){
+      avgLength += wordsArr[i].length;
+      
   }
-  return avgLength;
+  let average = avgLength/wordsArr.length
+  return average;
 }
 
 
@@ -140,17 +143,15 @@ function uniquifyArray (wordsUnique){
   if(wordsUnique.length == 0){
     return null;
   }
+
+
   let newUnique =[];
   for(i=0; i<wordsUnique.length; i++){
-    newUnique = wordsUnique;
-    if(newUnique.indexOf(i)==wordsUnique.indexOf(i)){
-      newUnique.splice(i);
-      
+    if(newUnique[i].indexOf(wordsUnique[i]) == -1){
+      uniqueWords.push(wordsUnique[i]);
     }
+  }
     
-    }
-  
-  
   return newUnique
 }
 
