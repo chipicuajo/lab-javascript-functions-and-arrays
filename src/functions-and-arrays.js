@@ -78,11 +78,6 @@ function sum(mixedArr) {
 
 
 
-
-
-
-
-
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
@@ -91,7 +86,6 @@ function averageNumbers(numbersAvg){
     return null;
   }
 
-
   let result =0;
   for (let i=0; i< numbersAvg.length; i++){
     result += numbersAvg[i]
@@ -99,7 +93,6 @@ function averageNumbers(numbersAvg){
   }
   
   return result, avg;
-
 }
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
@@ -120,6 +113,40 @@ function averageWordLength(wordsArr){
   return average;
 }
 
+
+function avg(mixedArr){
+  if(mixedArr == 0){
+    return null;
+  }
+  let addin = 0;
+  for (i = 0; i < mixedArr.length; i++) {
+    if (
+      typeof mixedArr[i] !== typeof 0 &&
+      typeof mixedArr[i] !== typeof "" &&
+      typeof mixedArr[i] !== typeof true
+    ) {
+      throw Error("Unsupported data type sir or ma'am")
+     
+    } else if (
+      typeof mixedArr[i] !== typeof 0 &&
+      typeof mixedArr[i] !== typeof ""
+    ) {
+      if (mixedArr[i] === true) {
+        mixedArr[i] = 1;
+        addin += mixedArr[i];
+      } else {
+        addin += 0;
+      }
+    } else if (typeof mixedArr[i] == typeof "") {
+      addin += mixedArr[i].length;
+    } else {
+      addin += mixedArr[i];
+    }
+  }
+  return Number((addin/mixedArr.length).toFixed(2));
+  
+
+}
 
 
 
