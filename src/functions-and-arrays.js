@@ -54,7 +54,7 @@ function sum(mixedArr) {
       typeof mixedArr[i] !== typeof "" &&
       typeof mixedArr[i] !== typeof true
     ) {
-      throw "Unsupported data type sir or ma'am";
+      throw Error("Unsupported data type sir or ma'am")
      
     } else if (
       typeof mixedArr[i] !== typeof 0 &&
@@ -167,13 +167,7 @@ function doesWordExist(wordsFind, str){
 
   return wordsFind.includes(str);
   
-
-    
 }
-
-
-
-
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -191,7 +185,7 @@ const wordsCount = [
 ];
 
 function howManyTimes(wordsCount, search){
-  if(wordsCount.length == ''){
+  if(wordsCount.length == 0){
     return 0;
   }
   let counter= 0;
